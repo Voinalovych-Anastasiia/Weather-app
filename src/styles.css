@@ -1,0 +1,77 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+  border: solid;
+  border-color: #2a2438;
+  color: #2a2438;
+  font-family: "Roboto Slab", serif;
+}
+
+h1 {
+  text-transform: capitalize;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.city {
+  font-size: 48px;
+}
+
+.searchCity {
+  width: 300px;
+  outline: none;
+}
+
+.blue {
+  border: 10px solid #0057b7;
+  margin: 0 auto;
+  opacity: 1;
+}
+
+.yellow {
+  border: 10px solid #ffd700;
+  margin: 0 auto;
+  opacity: 1;
+}
+
+.searchButton {
+  background-color: #ffd700;
+  border: 1.5px solid #0057b7;
+  border-radius: 15px;
+}
+
+.currentWeatherButton {
+  background-color: #ffd700;
+  border: 1.5px solid #0057b7;
+  border-radius: 15px;
+}
+
+.searchButton:hover {
+  background-color: #0057b7;
+  transition: all 200ms ease-in-out;
+}
+.currentWeatherButton:hover {
+  background-color: #0057b7;
+  transition: all 200ms ease-in-out;
+}
+
+.temperature {
+  font-size: 48px;
+  margin-left: 60px;
+}
+
+.units {
+  font-size: 12px;
+  position: relative;
+  top: -22px;
+}
+
+.day {
+  font-size: 48px;
+}
+
+.hour {
+  font-size: 22px;
+  font-style: italic;
+}
