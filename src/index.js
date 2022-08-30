@@ -13,7 +13,7 @@ function updateDate() {
   let days = [
     "Sunday",
     "Monday",
-    "Tuesdy",
+    "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
