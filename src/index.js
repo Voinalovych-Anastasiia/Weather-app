@@ -56,6 +56,8 @@ function showWeather(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
+
+  celTemp = response.data.main.temp;
 }
 
 axios.get(apiUrl).then(showWeather);
@@ -85,6 +87,8 @@ function showCurrentWeather(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
+
+  celTemp = response.data.main.temp;
 }
 
 function findLocation(position) {
@@ -124,6 +128,8 @@ function showSearchWeather(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
+
+  celTemp = response.data.main.temp;
 }
 
 function searchWeather(event) {
@@ -139,3 +145,28 @@ function searchWeather(event) {
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchWeather);
+
+function convertToFah(event) {
+  event.preventDefault();
+  let fahTemp = (celTemp * 9) / 5 + 32;
+  let tempElement = document.querySelector("#temperature");
+  tempElement.innerHTML = Math.round(fahTemp);
+  celLink.classList.remove("active");
+  fahLink.classList.add("active");
+}
+
+function convertToCel(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#temperature");
+  tempElement.innerHTML = Math.round(celTemp);
+  celLink.classList.add("active");
+  fahLink.classList.remove("active");
+}
+
+let celTemp = null;
+
+let fahLink = document.querySelector("#fah-link");
+fahLink.addEventListener("click", convertToFah);
+
+let celLink = document.querySelector("#cel-link");
+celLink.addEventListener("click", convertToCel);
