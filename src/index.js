@@ -30,6 +30,33 @@ function updateDate() {
 
 updateDate();
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  
+                <div class="col-2">
+                    <div class="weather-forecast-date">${day}</div> <img src="http://openweathermap.org/img/wn/10d@2x.png"
+                        alt="" />
+                    <div class="weather-forecast-temp">
+                        <span class="forecast-temp-max">18°</span>
+                        <span class="forecast-temp-min">12°</span>
+                    </div>
+                </div>            
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+displayForecast();
+
 let apiKey = "7e4d33361f2ae1188d23e9af28a43e43";
 let cityName = "Kyiv";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
